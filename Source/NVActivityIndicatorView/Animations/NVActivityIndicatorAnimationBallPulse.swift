@@ -37,12 +37,12 @@ class NVActivityIndicatorAnimationBallPulse: NVActivityIndicatorAnimationDelegat
         let beginTime = CACurrentMediaTime()
         let beginTimes: [CFTimeInterval] = [0.12, 0.24, 0.36]
         let timingFunction = CAMediaTimingFunction(controlPoints: 0.2, 0.68, 0.18, 1.08)
-        let animation = CAKeyframeAnimation(keyPath: "transform.scale")
+        let animation = CAKeyframeAnimation(keyPath: "opacity")
 
         // Animation
         animation.keyTimes = [0, 0.3, 1]
         animation.timingFunctions = [timingFunction, timingFunction]
-        animation.values = [1, 0.3, 1]
+        animation.values = [0.5, 1, 0.5]
         animation.duration = duration
         animation.repeatCount = HUGE
         animation.isRemovedOnCompletion = false
