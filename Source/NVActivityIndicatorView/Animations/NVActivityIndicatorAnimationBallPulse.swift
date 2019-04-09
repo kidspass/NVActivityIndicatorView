@@ -40,7 +40,7 @@ class NVActivityIndicatorAnimationBallPulse: NVActivityIndicatorAnimationDelegat
         let animation = CAKeyframeAnimation(keyPath: "opacity")
 
         // Animation
-        animation.keyTimes = [0, 0.3, 1]
+        animation.keyTimes = [0, 0.33, 0.66]
         animation.timingFunctions = [timingFunction, timingFunction]
         animation.values = [0.5, 1, 0.5]
         animation.duration = duration
@@ -56,6 +56,7 @@ class NVActivityIndicatorAnimationBallPulse: NVActivityIndicatorAnimationDelegat
                                height: circleSize)
 
             animation.beginTime = beginTime + beginTimes[i]
+            circle.opacity = 0.5
             circle.frame = frame
             circle.add(animation, forKey: "animation")
             layer.addSublayer(circle)
